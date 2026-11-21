@@ -1,0 +1,17 @@
+{
+  "name": "dev-deakin-backend",
+  "version": "2.0.0",
+  "description": "DEV@Deakin Express backend: newsletter (P5) + posts API (D2)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.0.0",
+    "resend": "^6.25.0"
+  }
+}

@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // D2: posts are written and read ONLY by the Express backend (Firebase Admin SDK,
+    // which bypasses these rules). The frontend can no longer touch posts directly.
+    match /posts/{postId} {
+      allow read, write: if false;
+    }
+  }
+}
